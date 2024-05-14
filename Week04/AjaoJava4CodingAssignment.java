@@ -82,8 +82,80 @@ public class AjaoJava4CodingAssignment {
 		
 		
 		
+		/*
+		 * 3. How do you access the last element of any array?
+		 * lastElement = arr[arr.length - 1];
+		 */
+		
+		/*
+		 * 4. How do you access the first element of any array?
+		 * firstElement = arr[0];
+		 */
+		
+		/*
+		 * 5. Create a new array of int called nameLengths. Write a loop to iterate over the previously
+		 *  	created names array and add the length of each name to the nameLengths array.
+		 */
+		int[] nameLengths = new int[names.length]; //Create a new array of int called nameLengths
+		
+		for(int i = 0; i < names.length; i++) { //Write a loop to iterate over the previously created names array...
+			
+			nameLengths[i] = names[i].length(); //...and add the length of each name to the nameLengths array.
+		}
+		
+		
+		/*
+		 * 6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
+		 */
+		int sumNameLengths = 0;
+		
+		for(int i : nameLengths) { //Write a loop to iterate over the nameLengths array...
+			sumNameLengths += i; //and calculate the sum of all the elements in the array.
+		}
+		
+		System.out.println("The sum of the nameLengths is: " +sumNameLengths); //Print the result to the console.
+		
+		
+		/*
+		 * 7. Write a method that takes a String, word, and an int, n, as arguments and returns the word
+		 * concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method
+		 *  to return “HelloHelloHello”)
+		 */		
+		System.out.println(returnWordRepeated("Hello",3)); //if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”)
+		
+		
+		/*
+		 * 8. Write a method that takes two Strings, firstName and lastName, and returns a full name (the full
+		 *  name should be the first and the last name as a String separated by a space).
+		 */
+		System.out.println(returnFullName("Lisa", "Turner"));
 		
 
 	} //End of Main
+	
+	//--------METHODS BEGIN----------------------------------METHODS BEGIN--------------------------------METHODS BEGIN------------------------
+	
+	public static String returnWordRepeated(String word, int n) { //7. Write a method that takes a String, word, and an int, n, as arguments...
+		StringBuilder wordRepeat = new StringBuilder();
+		
+		for(int i = 0; i < n; i++) {
+			wordRepeat.append(word);
+		}
+		
+		return wordRepeat.toString(); //...and returns the word concatenated to itself n number of times.
+		
+	}
+	
+	
+	public static String returnFullName(String fName, String lName) { //Write a method that takes two Strings, firstName and lastName,...
+		StringBuilder fullName = new StringBuilder();
+		
+		fullName.append(fName);
+		fullName.append(" "); //first and the last name as a String separated by a space).
+		fullName.append(lName);
+		
+		return fullName.toString(); //...and returns a full name (the full name should be the 
+	}
+	
 
 } // End of Class
