@@ -146,6 +146,26 @@ public class AjaoJava4CodingAssignment {
 		double[] dblArr = {1.0, 2.0, 4.0, 5.0, 6.0, 7.0};
 		System.out.println(returnArrayAvg(dblArr));
 		
+		
+		/*
+		 * 11. Write a method that takes two arrays of double and returns true if the average of the elements in
+		 *  the first array is greater than the average of the elements in the second array.
+		 */
+		double[] dblArr2 = {1.0, 2.0, 4.0, 5.0, 6.0, 6.0};
+		System.out.println(returnArrGreater(dblArr,dblArr2));
+		
+		/*
+		 * 12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket,
+		 *  and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+		 */
+		System.out.println(willBuyDrink(true, 10.51));
+		
+		
+		/*
+		 * 13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+		 */
+		
+		
 
 	} //End of Main
 	
@@ -173,10 +193,11 @@ public class AjaoJava4CodingAssignment {
 		return fullName.toString(); //...and returns a full name (the full name should be the 
 	}
 	
+	
+	
 	public static boolean returnGreaterThan100(int[] anArray) { //9. Write a method that takes an array of int and...
 		int sum = 0;
 		int arrIndex = anArray.length-1;
-		boolean isOver100 = false;
 		
 		for(int i = 0; i<=arrIndex; i++) {
 			sum += anArray[i];
@@ -201,6 +222,19 @@ public class AjaoJava4CodingAssignment {
 		}
 		
 		return sum/dblArr.length; //and returns the average of all the elements in the array.
+	}
+	
+		 
+
+	public static boolean returnArrGreater(double[] arr1, double[] arr2) { //11. Write a method that takes two arrays of double and
+
+		return (returnArrayAvg(arr1) > returnArrayAvg(arr2)); //returns true if the average of the elements in array 1 > array 2
+	}
+	
+	
+	public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) { // 12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket,
+		
+		return (isHotOutside && moneyInPocket > 10.50); //returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 	}
 	
 
