@@ -151,7 +151,7 @@ public class AjaoJava4CodingAssignment {
 		 * 11. Write a method that takes two arrays of double and returns true if the average of the elements in
 		 *  the first array is greater than the average of the elements in the second array.
 		 */
-		double[] dblArr2 = {1.0, 2.0, 4.0, 5.0, 6.0, 6.0};
+		double[] dblArr2 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
 		System.out.println(returnArrGreater(dblArr,dblArr2));
 		
 		/*
@@ -163,7 +163,17 @@ public class AjaoJava4CodingAssignment {
 		
 		/*
 		 * 13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+		 *
+		 * My method takes two arrays of type double as parameters and returns an array of identical length which sums the values
+		 * of the two arrays by index.
+		 * 
+		 * I created this method to manipulate existing, create, and return objects via methods.
 		 */
+		double[] sumTwoDoubles = new double[dblArr.length];
+		sumTwoDoubles = sumDoubleIndeces(dblArr, dblArr2);
+		for(double d : sumTwoDoubles) {
+			System.out.println(d);
+		}
 		
 		
 
@@ -235,6 +245,22 @@ public class AjaoJava4CodingAssignment {
 	public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) { // 12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket,
 		
 		return (isHotOutside && moneyInPocket > 10.50); //returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+	}
+	
+	
+	public static double[] sumDoubleIndeces(double[] arr1, double[] arr2) {
+		if(arr1.length != arr2.length) {
+			System.out.println("Arrays must be of same size.");
+			return null;
+		}
+		else {
+			double[] sumArr = new double[arr1.length];
+			for(int i = 0; i<arr1.length; i++) {
+				sumArr[i] = arr1[i] + arr2[i];
+			}
+			return sumArr;
+		}
+		
 	}
 	
 
