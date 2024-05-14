@@ -44,12 +44,12 @@ public class AjaoJava4CodingAssignment {
 		System.out.print("Subtracting the first ages3 indexed item from the last yields: ");
 		System.out.println(ages2[ages3.length -1] - ages3[0]);
 		
-		int sumAge = 0; //c. Use a loop to iterate through the array and calculate the average age. Print the result to the console.
+		int sumAge = 0; //c. Use a loop to iterate through the array and calculate the average age. ...
 		for(int a : ages2) {
 			sumAge += a;
 		}
 		
-		System.out.println("The average age in ages2 is: " + sumAge/ages2.length);
+		System.out.println("The average age in ages2 is: " + sumAge/ages2.length); //...Print the result to the console.
 		
 		
 		
@@ -92,6 +92,7 @@ public class AjaoJava4CodingAssignment {
 		 * firstElement = arr[0];
 		 */
 		
+		
 		/*
 		 * 5. Create a new array of int called nameLengths. Write a loop to iterate over the previously
 		 *  	created names array and add the length of each name to the nameLengths array.
@@ -130,6 +131,21 @@ public class AjaoJava4CodingAssignment {
 		 */
 		System.out.println(returnFullName("Lisa", "Turner"));
 		
+		
+		/*
+		 * 9. Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
+		 */
+		
+		System.out.println(returnGreaterThan100(ages));
+		int[] sumUnder100 = {33, 33, 33};
+		System.out.println(returnGreaterThan100(sumUnder100));
+		
+		/*
+		 * 10. Write a method that takes an array of double and returns the average of all the elements in the array.
+		 */
+		double[] dblArr = {1.0, 2.0, 4.0, 5.0, 6.0, 7.0};
+		System.out.println(returnArrayAvg(dblArr));
+		
 
 	} //End of Main
 	
@@ -147,7 +163,7 @@ public class AjaoJava4CodingAssignment {
 	}
 	
 	
-	public static String returnFullName(String fName, String lName) { //Write a method that takes two Strings, firstName and lastName,...
+	public static String returnFullName(String fName, String lName) { //8. Write a method that takes two Strings, firstName and lastName,...
 		StringBuilder fullName = new StringBuilder();
 		
 		fullName.append(fName);
@@ -155,6 +171,36 @@ public class AjaoJava4CodingAssignment {
 		fullName.append(lName);
 		
 		return fullName.toString(); //...and returns a full name (the full name should be the 
+	}
+	
+	public static boolean returnGreaterThan100(int[] anArray) { //9. Write a method that takes an array of int and...
+		int sum = 0;
+		int arrIndex = anArray.length-1;
+		boolean isOver100 = false;
+		
+		for(int i = 0; i<=arrIndex; i++) {
+			sum += anArray[i];
+			//System.out.println(anArray[i]);
+		}
+		
+		if(sum>100) {
+			return true; //...returns true if the sum of all the ints in the array is greater than 100.
+		}
+		else {
+			return false;
+		}
+		
+	}
+	
+	
+	public static double returnArrayAvg(double[] dblArr) { //10. Write a method that takes an array of double...
+		double sum = 0;
+		
+		for(double d : dblArr) {
+			sum += d;
+		}
+		
+		return sum/dblArr.length; //and returns the average of all the elements in the array.
 	}
 	
 
