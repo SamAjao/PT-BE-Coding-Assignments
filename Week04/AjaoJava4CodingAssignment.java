@@ -5,6 +5,7 @@
  */
 package Week04;
 
+
 public class AjaoJava4CodingAssignment {
 
 	public static void main(String[] args) {
@@ -52,6 +53,32 @@ public class AjaoJava4CodingAssignment {
 		
 		
 		
+		
+		/*
+		 * 2. Create an array of String called names that contains the following values: “Sam”, “Tommy”, “Tim”, “Sally”, “Buck”, “Bob”.
+		 * 	a. Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
+		 * 	b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
+		 */
+		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"}; //2. Create an array of String called names that...
+		int nameLens = 0;
+		
+		for(String n : names) { // a. Use a loop to iterate through the array and...
+			nameLens += n.length();
+		}
+		
+		double avgNameLens = (double)nameLens/(double)names.length; //...calculate the average number of letters per name...
+		System.out.println("The calculated average name length is: " + String.format("%.3f", avgNameLens)); //Print the result to the console.
+		
+		
+		String concatNames = "";
+		
+		for(int i=0; i<= names.length-1; i++) { //b. Use a loop to iterate through the array again...
+			concatNames += names[i]; //...and concatenate all the names together,...
+			if(i < names.length-1) {
+				concatNames += " "; //...separated by spaces, and...
+			}
+		}
+		System.out.println(concatNames); //...print the result to the console.
 		
 		
 		
