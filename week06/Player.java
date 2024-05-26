@@ -30,25 +30,62 @@ import java.util.List;
 
 public class Player {
 	
-	private List<String> hand = new ArrayList<String>();
+	private List<Card> hand = new ArrayList<Card>();
 	private int score;
 	private String name;
 	
 	
-	
+	//Constructor
 	public Player() {
 		setScore(0);
 	}
 	
+	//Constructor
 	public Player(String playerName) {
 		setScore(0);
+		setName(playerName);
 	}
 	
-	public List<String> getHand() {
+	
+	public void describe() {
+		System.out.println("Player Name: " + name + " Score: " + score);
+		System.out.println("Player Hand:");
+		for(Card card : hand) {
+			card.describe();
+		}
+	}
+	
+	
+	public Card flip() {
+		int topCard = hand.size() - 1;
+		
+		Card flipCard = new Card();
+		flipCard = hand.get(topCard);
+		this.hand.remove(topCard);
+		
+		return flipCard;
+	}
+	
+	
+	public Card draw(Deck deck) {
+		
+		Card drawCard = new Card();
+		drawCard = deck.draw();
+		
+		return drawCard;
+	}
+	
+	
+	public void incrementScore() {
+		this.score += score;
+	}
+	
+	
+	public List<Card> getHand() {
 		return hand;
 	}
 	
-	public void setHand(List<String> hand) {
+	public void setHand(List<Card> hand) {
 		this.hand = hand;
 	}
 	
