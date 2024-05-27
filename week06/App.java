@@ -32,7 +32,7 @@ public class App {
 		Player player1 = new Player("Player 1");
 		Player player2 = new Player("Player 2");
 		warDeck.shuffleDeck();
-		System.out.println(warDeck.getDeckSize());
+		System.out.println("Number of cards in Deck is: " + warDeck.getDeckSize());
 		
 		//b. Using a traditional for loop, iterate 52 times calling the Draw method on
 		//		the other player each iteration using the Deck you instantiated.
@@ -47,11 +47,11 @@ public class App {
 		 * Note:  If the values are equal (it is a tie), print a message saying that no point was awarded.
 		 */
 		for(int i = 0; i < 26; i++) {
-			System.out.println("Player 1 Drew: ");
+			System.out.print("Player 1 Drew::: ");
 			player1.topCardIs().describe();
-			System.out.println("Player 2 Drew: ");
+			System.out.print("Player 2 Drew::: ");
 			player2.topCardIs().describe();
-			System.out.println("--------------------------------------------------------------");
+			
 			
 			int result = player1.flip().getValue() - player2.flip().getValue();
 			if(result > 0) {
@@ -65,6 +65,8 @@ public class App {
 			else {
 				System.out.println("Tie. No point awarded.");
 			}
+			
+			System.out.println("--------------------------------------------------------------------------------------");
 		}
 		
 		//d. After the loop, compare the final score from each player.
