@@ -67,17 +67,23 @@ public class Player {
 	}
 	
 	
-	public Card draw(Deck deck) {
+	public Card topCardIs() {
+		int size = this.hand.size() - 1;
+		return hand.get(size);
+	}
+	
+	
+	public void draw(Deck deck) {
 		
 		Card drawCard = new Card();
 		drawCard = deck.draw();
 		
-		return drawCard;
+		this.hand.add(drawCard);
 	}
 	
 	
 	public void incrementScore() {
-		this.score += score;
+		this.score += 1;
 	}
 	
 	
