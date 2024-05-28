@@ -94,7 +94,7 @@ public class App {
 			System.out.println("Game is a Draw!");
 		}
 		
-		System.out.println("Number of cards in Deck: " + warDeck.getDeckSize());
+		System.out.println("Number of cards remaining in Deck: " + warDeck.getDeckSize());
 
 
 	}//End Main
